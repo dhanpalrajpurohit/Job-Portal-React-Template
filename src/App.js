@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './container/Header';
+import Slider from './container/Slider';
+import Testimonial from './container/Testimonial';
+import Joblist from './container/Joblist';
+import Footer from './container/Footer';
+import JobCategories from './container/JobCategories';
+import JobSearch from './container/JobSearch';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Slider />
+      <JobSearch />
+      <JobCategories/>
+      <Joblist />
+      <Testimonial />
+      <Footer />
     </div>
   );
 }
