@@ -3,17 +3,17 @@ import React from 'react'
 function JobSearch() {
   return (
     <div>
-      <div class="catagory_area">
-        <div class="container">
-            <div class="row cat_search">
-                <div class="col-lg-3 col-md-4">
-                    <div class="single_input">
+      <div className="catagory_area">
+        <div className="container">
+            <div className="row cat_search">
+                <div className="col-lg-3 col-md-4">
+                    <div className="single_input">
                         <input type="text" placeholder="Search keyword" />
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="single_input">
-                        <select class="wide" >
+                <div className="col-lg-3 col-md-4">
+                    <div className="single_input">
+                        <select className="wide" >
                             <option data-display="Location">Location</option>
                             <option value="1">Dhaka</option>
                             <option value="2">Rangpur</option>
@@ -21,9 +21,9 @@ function JobSearch() {
                           </select>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="single_input">
-                        <select class="wide">
+                <div className="col-lg-3 col-md-4">
+                    <div className="single_input">
+                        <select className="wide">
                             <option data-display="Category">Category</option>
                             <option value="1">Category 1</option>
                             <option value="2">Category 2</option>
@@ -31,15 +31,15 @@ function JobSearch() {
                           </select>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-12">
-                    <div class="job_btn">
-                        <a href="#" class="boxed-btn3">Find Job</a>
+                <div className="col-lg-3 col-md-12">
+                    <div className="job_btn">
+                        <a href="#" className="boxed-btn3">Find Job</a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="popular_search d-flex align-items-center">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="popular_search d-flex align-items-center">
                         <span>Popular Search:</span>
                         <ul>
                             <li><a href="#">Design & Creative</a></li>
