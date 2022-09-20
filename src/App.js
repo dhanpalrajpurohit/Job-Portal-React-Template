@@ -11,7 +11,8 @@ import Index from './pages/Index';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Jobs from './pages/Jobs';
-import Header from './container/Header';
+// import Header from './container/Header';
+import Header from './components/header/navlinks/Navlinks';
 import Footer from './container/Footer';
 
 function App() {
