@@ -7,26 +7,24 @@ import {
   Routes,
   Link
 } from "react-router-dom";
-import Index from './pages/Index';
-import Contact from './pages/Contact';
-import Blog from './pages/Blog';
-import Jobs from './pages/Jobs';
-// import Header from './container/Header';
-import Header from './components/header/navlinks/Navlinks';
-import Footer from './container/Footer';
+import {Box} from "@mui/material";
+import{
+  SearchFeed, Feed, ChannelDetail, VideoDetails, Navbar,
+} from './components';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header/>
+      <Box sx={{backgroundColor:'#000'}}>
+      <Navbar/>
       <Routes>
-          <Route path='/' element={<Index/>} />
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/blog' element={<Blog/>} />
-          <Route path='/jobs' element={<Jobs/>} />
+          <Route path='/' exact element={<Feed/>} />
+          <Route path='/video/:id' element={<VideoDetails/>} />
+          <Route path='/channel/:id' element={<ChannelDetail/>} />
+          <Route path='/search/:searchTerm' element={<SearchFeed/>} />
       </Routes>
-      <Footer/>
+      </Box>
       </BrowserRouter>
     </div>
   );
