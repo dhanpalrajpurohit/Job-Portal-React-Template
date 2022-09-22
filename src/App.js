@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import {Box} from "@mui/material";
 import{
-  SearchFeed, Feed, ChannelDetail, VideoDetails, Navbar,
+  SearchFeed, Feed, ChannelDetail, VideoDetail, Navbar,
 } from './components';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <Navbar/>
       <Routes>
           <Route path='/' exact element={<Feed/>} />
-          <Route path='/video/:id' element={<VideoDetails/>} />
+          <Route path='/video/:id' element={<VideoDetail/>} />
           <Route path='/channel/:id' element={<ChannelDetail/>} />
           <Route path='/search/:searchTerm' element={<SearchFeed/>} />
       </Routes>
