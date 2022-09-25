@@ -3,8 +3,7 @@ import React from 'react'
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Paper, IconButton } from '@mui/material';
-import SearchIcon from '@mui/icons-material';
-
+import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor';
 function SearchBar() {
   return (
     <Paper
@@ -23,8 +22,15 @@ function SearchBar() {
         placeholder="Search.."
         value=""
         onChange={()=>{}}
+        sx={{
+          borderStyle:0 
+        }
+        }
         />
-        <IconButton></IconButton>
+        <IconButton type="submit" sx={{
+          p:'10px', color: 'red'}}>
+            <YoutubeSearchedForIcon />
+          </IconButton>
     </Paper>
   )
 }
