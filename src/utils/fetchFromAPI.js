@@ -11,7 +11,7 @@ const options = {
       'X-RapidAPI-Key': process.env.REACT_Rapid_API_HOST_KEY,
       'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
 
-    }
+    } 
   };
 
   export const fetchFromAPI = async (url) => {
