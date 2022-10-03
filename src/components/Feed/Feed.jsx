@@ -8,10 +8,11 @@ import { fetchFromAPI } from '../../utils/fetchFromAPI';
 
 function Feed() {
   const [selectedCategory, setSelectedCategory] = useState('New');
-  const [video, setVideos] = useState([]);
+  const [video, setVideos] = useState(null);
 
   useEffect(()=>{
-    fetchFromAPI(`searcb?lart=snippet&q=${selectedCategory}`);
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+    .then((data)=>setVideos(data.items))
   },[selectedCategory]);
 
   
@@ -45,7 +46,7 @@ function Feed() {
           > Videos</span>
         </Typography>
       </Box>
-      <Videos />
+      <Videos videos={video} />
     </Stack>
   )
 }
