@@ -2,7 +2,7 @@ import React from 'react'
 
 import SocialIcons from './SocialIcons';
 import NavLinks from './NavLinks';
-
+import FooterLogo from './FooterLogo';
 const company_links = [
     {
         "value":"About",
@@ -22,6 +22,25 @@ const company_links = [
     }
 ]
 
+const category_links = [
+    {
+        "value":"Design",
+        "url":"/about"
+    },
+    {
+        "value":"Engineering",
+        "url":"/pricing"
+    },
+    {
+        "value":"Sales & Marketing",
+        "url":"/careertips"
+    },
+    {
+        "value":"Finance",
+        "url":"/faq"
+    }
+]
+
 function Footer() {
   return (
     <div>
@@ -31,45 +50,14 @@ function Footer() {
                 <div className="row">
                     <div className="col-xl-3 col-md-6 col-lg-3">
                         <div className="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                            <div className="footer_logo">
-                                <a href="#">
-                                    <img src="img/logo.png" alt="" />
-                                </a>
-                            </div>
-                            
+                            <FooterLogo />
                             <SocialIcons/>
-                            
 
                         </div>
                     </div>
-                    <div className="col-xl-2 col-md-6 col-lg-2">
-                        {/* <div className="footer_widget wow fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
-                            <h3 className="footer_title">
-                                Company
-                            </h3>
-                            <ul>
-                                <li><a href="#">About </a></li>
-                                <li><a href="#"> Pricing</a></li>
-                                <li><a href="#">Carrier Tips</a></li>
-                                <li><a href="#">FAQ</a></li>
-                            </ul>
-
-                        </div> */}
                         <NavLinks header="Company" navlinks={company_links}/>
-                    </div>
-                    <div className="col-xl-3 col-md-6 col-lg-3">
-                        <div className="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
-                            <h3 className="footer_title">
-                                Category
-                            </h3>
-                            <ul>
-                                <li><a href="#">Design & Art</a></li>
-                                <li><a href="#">Engineering</a></li>
-                                <li><a href="#">Sales & Marketing</a></li>
-                                <li><a href="#">Finance</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                        <NavLinks header="Category" navlinks={category_links}/>
+
                     <div className="col-xl-4 col-md-6 col-lg-4">
                         <div className="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
                             <h3 className="footer_title">

@@ -1,9 +1,10 @@
 import React from 'react'
+import Tags from '../components/JobSearch/Tags'
 
 function JobSearch() {
   return (
     <div>
-      <div className="catagory_area">
+      <div className="catagory_area" style={{bgColor:"white"}}>
         <div className="container">
             <div className="row cat_search">
                 <div className="col-lg-3 col-md-4">
@@ -37,22 +38,7 @@ function JobSearch() {
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="popular_search d-flex align-items-center">
-                        <span>Popular Search:</span>
-                        <ul>
-                            <li><a href="#">Design & Creative</a></li>
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Administration</a></li>
-                            <li><a href="#">Teaching & Education</a></li>
-                            <li><a href="#">Engineering</a></li>
-                            <li><a href="#">Software & Web</a></li>
-                            <li><a href="#">Telemarketing</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <Tags/>
         </div>
     </div>
     </div>
