@@ -14,6 +14,7 @@ import{
 
 import Navbar from './components/Header/header';
 import Footer from './components/Footer/footer';
+import Login from './pages/Login';
 
 import Home from './pages/Index'
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/video/:id' element={<VideoDetail/>} />
           <Route path='/channel/:id' element={<ChannelDetail/>} />
           <Route path='/search/:searchTerm' element={<SearchFeed/>} />
+          <Route path='/login' element={<Login/>} />
       </Routes>
       <Footer/>
       </Box>
