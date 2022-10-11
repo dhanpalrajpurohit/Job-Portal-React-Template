@@ -12,10 +12,13 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 
 const theme = createTheme();
-
+const ColorButton = styled(Button)(({ theme }) => ({
+  backgroundColor: '#00D363',
+}));
 export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,6 +28,8 @@ export default function Login() {
       password: data.get('password'),
     });
   };
+
+ 
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,7 +59,7 @@ export default function Login() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: '#00D363' }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -69,7 +74,7 @@ export default function Login() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                autoFocus
+                className="single_input"
               />
               <TextField
                 margin="normal"
@@ -80,19 +85,20 @@ export default function Login() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                className="single_input"
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-              <Button
+              <ColorButton
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In
-              </Button>
+              </ColorButton>
               <Grid container>
                 <Grid item xs>
                   <Link href="/forgetpassword" variant="body2">
