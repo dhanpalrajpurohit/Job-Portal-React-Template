@@ -13,22 +13,40 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 
+import axiosConfig from '../../axios';
 
 const theme = createTheme();
 const ColorButton = styled(Button)(({ theme }) => ({
   backgroundColor: '#00D363',
 }));
+
+const errorMessage = (props) => {
+  return(
+  <Snackbar autoHideDuration={6000}>
+      <Alert severity="success" sx={{ width: '100%' }}>
+        This is a success message!
+      </Alert>
+    </Snackbar>
+  )
+  }
+
 export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const formdata = new FormData(event.currentTarget);
+    const data = {
+      'email': formdata.get('email'),
+      'password': formdata.get('password'),
+    };
+    axiosConfig.post('api/accounts/login/', data).then(response => {
+       console.log(response)
+     }).catch(error => {
+      errorMessage
+     });
   };
-
  
 
   return (
