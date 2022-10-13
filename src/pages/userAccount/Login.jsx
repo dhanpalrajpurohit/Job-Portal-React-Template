@@ -13,9 +13,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
-import Alert from '@mui/material/Alert';
-import Snackbar from '@mui/material/Snackbar';
-
+import { useState } from "react";
+import Error from '../../components/Messages/Error';
 import axiosConfig from '../../axios';
 
 const theme = createTheme();
@@ -23,17 +22,10 @@ const ColorButton = styled(Button)(({ theme }) => ({
   backgroundColor: '#00D363',
 }));
 
-const errorMessage = (props) => {
-  return(
-  <Snackbar autoHideDuration={6000}>
-      <Alert severity="success" sx={{ width: '100%' }}>
-        This is a success message!
-      </Alert>
-    </Snackbar>
-  )
-  }
+
 
 export default function Login() {
+  const [errorMessage, setErrorMessage] = useState()
   const handleSubmit = (event) => {
     event.preventDefault();
     const formdata = new FormData(event.currentTarget);
@@ -42,9 +34,10 @@ export default function Login() {
       'password': formdata.get('password'),
     };
     axiosConfig.post('api/accounts/login/', data).then(response => {
-       console.log(response)
+      setErrorMessage("error")
+      console.log(response)
      }).catch(error => {
-      errorMessage
+      setErrorMessage(error)
      });
   };
  
@@ -128,7 +121,11 @@ export default function Login() {
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
+                {
+                errorMessage && <Error message="erorr occured"/>
+              }
               </Grid>
+              
             </Box>
           </Box>
         </Grid>
