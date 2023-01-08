@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -16,9 +15,11 @@ import { styled } from '@mui/material/styles';
 import { useState } from "react";
 import Error from '../../components/Messages/Error';
 import axiosConfig from '../../axios';
+import { useNavigate, Link } from 'react-router-dom';
 
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import Success from '../../components/Messages/Success';
 
 const theme = createTheme();
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -28,8 +29,10 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 
 export default function Login() {
-  const [errorMessage, setErrorMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState("");
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,11 +42,10 @@ export default function Login() {
       'password': formdata.get('password'),
     };
     axiosConfig.post('api/accounts/login/', data).then(response => {
-      setErrorMessage(response)
-      console.log(response)
-      setOpen(true);
+      navigate('/home');
     }).catch(error => {
-      setErrorMessage(error)
+      navigate('/home');
+
     });
   };
 
@@ -89,6 +91,7 @@ export default function Login() {
                 id="email"
                 label="Email Address"
                 name="email"
+                type="email"
                 autoComplete="email"
                 className="single_input"
               />
@@ -117,22 +120,15 @@ export default function Login() {
               </ColorButton>
               <Grid container>
                 <Grid item xs>
-                  <Link href="/forgetpassword" variant="body2">
+                  <Link to="/forgetpassword">
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
+                  <Link to="/signup">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
-
-                <Snackbar open={open} autoHideDuration={6000}>
-                  <Alert severity="success" sx={{ width: '100%' }}>
-                    This is a success message!
-                  </Alert>
-                </Snackbar>
-
               </Grid>
 
             </Box>

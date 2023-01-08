@@ -1,26 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter,
-  Switch,
   Route,
   Routes,
-  Link
 } from "react-router-dom";
 import {Box} from "@mui/material";
-import{
-  SearchFeed, Feed, ChannelDetail, VideoDetail,
-} from './components';
 
-import Navbar from './components/Header/header';
-import Footer from './components/Footer/footer';
-import Login from './pages/userAccount/Login';
-import Signup from './pages/userAccount/Signup';
-import ForgetPassword from './pages/userAccount/ForgetPassword';
-import ResetPassword from './pages/userAccount/ResetPassword';
-import UserProfile from './pages/userAccount/Profile';
+import {Login, Signup, ResetPassword, Profile, ForgetPassword} from './pages/userAccount/index';
+import {Home, Blog, Contact, Jobs} from './pages/index';
 
-import Home from './pages/Index'
 function App() {
   return (
     <div className="App">
@@ -29,19 +17,19 @@ function App() {
       {/* <Navbar/> */}
       <Routes>
           <Route path='/' exact element={<Home/>} />
-          <Route path='/video/:id' element={<VideoDetail/>} />
-          <Route path='/channel/:id' element={<ChannelDetail/>} />
-          <Route path='/search/:searchTerm' element={<SearchFeed/>} />
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/job' element={<Jobs/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>} />
-          <Route path='/forgetpassword' element={<ForgetPassword/>} />
-          <Route path='/resetpassword' element={<ResetPassword/>} />
-          <Route path='/userprofile' element={<UserProfile />}/>
+          <Route path='/blog' element={<Blog/>} />
+          <Route path='/profile' element={<Profile />}/>
+          <Route path='/resetpassword' element={<ResetPassword />}/>
+          <Route path='/forgetpassword' element={<ForgetPassword />}/>
       </Routes>
       {/* <Footer/> */}
       </Box>
       </BrowserRouter>
-    </div>
+    </div>  
   );
 }
 

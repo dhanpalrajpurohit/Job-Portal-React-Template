@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {Link} from "react-router-dom";
 
-import NavLogo from './navlogo.jsx'
-import Navlink from './navLink.jsx'
+import NavLogo from './navlogo.jsx';
+import Navlink from './navLink.jsx';
 
 function Header() {
   return (
@@ -17,7 +18,7 @@ function Header() {
                             <div className="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div className="Appointment">
                                     <div className="phone_num d-none d-xl-block">
-                                        <a href="#">Log in</a>
+                                        <Link to='/login'>Log in</Link>
                                     </div>
                                     <div className="d-none d-lg-block">
                                         <a className="boxed-btn3" href="#">Post a Job</a>

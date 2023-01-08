@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import {Link} from "react-router-dom";
+
 
 const navlinks = [
     {
@@ -31,7 +33,7 @@ function Navlink() {
                 <nav>
                     <ul id="navigation">
                         {navlinks.map((navlink) => {
-                            return <li><a href={navlink.url}>{navlink.link}</a></li>
+                            return <li><Link to={navlink.url}>{navlink.link}</Link></li>
                         })}
                     </ul>
                 </nav>
