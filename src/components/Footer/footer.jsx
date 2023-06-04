@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 import SocialIcons from './SocialIcons';
 import NavLinks from './NavLinks';
 import FooterLogo from './FooterLogo';
@@ -91,4 +92,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   )
 }
 
-export default Footer
+export default Footer;
